@@ -5,7 +5,8 @@
 @endsection
 
 @section('content')
-	
+<div class="features_items"><!--features_items-->
+    <h2 class="title text-center">Customer Login | Registration</h2>
 <section id="form"><!--form-->
     <div class="container">
         <div class="row">
@@ -41,6 +42,6 @@
     </div>
 </section><!--/form-->
 
-
+</div>
     
 @endsection

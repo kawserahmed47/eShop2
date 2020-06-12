@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>@yield('title') | MasudIT</title>
+    <link rel="icon" type="image/gif/png" href="{{asset('public/front/images/home/mi.jpg')}}">
+    <title> @yield('title') | MasudIT</title>
     <link href="{{asset('public/front/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/front/css/font-awesome.min.css')}}" rel="stylesheet">
     <link href="{{asset('public/front/css/prettyPhoto.css')}}" rel="stylesheet">

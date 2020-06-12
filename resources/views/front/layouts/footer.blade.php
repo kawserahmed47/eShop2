@@ -4,14 +4,15 @@
             <div class="row">
                 <div class="col-sm-2">
                     <div class="companyinfo">
-                        <h2><span>e</span>-shopper</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,sed do eiusmod tempor</p>
+                        <a href="{{route('index')}}"><img src="{{asset('public/front/images/home/masudit-logo.gif')}}" alt="" /></a>
+                        <p>Dogormura, CRP Road Savar,
+                            Dhaka, Bangladesh 1343.</p>
                     </div>
                 </div>
                 <div class="col-sm-7">
                     <div class="col-sm-3">
                         <div class="video-gallery text-center">
-                            <a href="#">
+                            <a href="https://www.youtube.com/channel/UCaRqEsLDKXqeLmdKWoTUa3w" target="_bank">
                                 <div class="iframe-img">
                                     <img src="{{asset('public/front/images/home/iframe1.png')}}" alt="" />
                                 </div>
@@ -19,14 +20,14 @@
                                     <i class="fa fa-play-circle-o"></i>
                                 </div>
                             </a>
-                            <p>Circle of Hands</p>
-                            <h2>24 DEC 2014</h2>
+                            <p>Title</p>
+                            <h2>Sub Title</h2>
                         </div>
                     </div>
                     
                     <div class="col-sm-3">
                         <div class="video-gallery text-center">
-                            <a href="#">
+                            <a href="https://www.youtube.com/channel/UCaRqEsLDKXqeLmdKWoTUa3w" target="_blank">
                                 <div class="iframe-img">
                                     <img src="{{asset('public/front/images/home/iframe2.png')}}" alt="" />
                                 </div>
@@ -34,14 +35,14 @@
                                     <i class="fa fa-play-circle-o"></i>
                                 </div>
                             </a>
-                            <p>Circle of Hands</p>
-                            <h2>24 DEC 2014</h2>
+                            <p>Title</p>
+                            <h2>Subtitle</h2>
                         </div>
                     </div>
                     
                     <div class="col-sm-3">
                         <div class="video-gallery text-center">
-                            <a href="#">
+                            <a href="https://www.youtube.com/channel/UCaRqEsLDKXqeLmdKWoTUa3w" target="_blank">
                                 <div class="iframe-img">
                                     <img src="{{asset('public/front/images/home/iframe3.png')}}" alt="" />
                                 </div>
@@ -49,14 +50,14 @@
                                     <i class="fa fa-play-circle-o"></i>
                                 </div>
                             </a>
-                            <p>Circle of Hands</p>
-                            <h2>24 DEC 2014</h2>
+                            <p>Title</p>
+                            <h2>Subtitle</h2>
                         </div>
                     </div>
                     
                     <div class="col-sm-3">
                         <div class="video-gallery text-center">
-                            <a href="#">
+                            <a href="https://www.youtube.com/channel/UCaRqEsLDKXqeLmdKWoTUa3w" target="_blank">
                                 <div class="iframe-img">
                                     <img src="{{asset('public/front/images/home/iframe4.png')}}" alt="" />
                                 </div>
@@ -64,15 +65,15 @@
                                     <i class="fa fa-play-circle-o"></i>
                                 </div>
                             </a>
-                            <p>Circle of Hands</p>
-                            <h2>24 DEC 2014</h2>
+                            <p>Title</p>
+                            <h2>Subtitle</h2>
                         </div>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="address">
                         <img src="{{asset('public/front/images/home/map.png')}}" alt="" />
-                        <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
+                        {{-- <p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p> --}}
                     </div>
                 </div>
             </div>
@@ -89,7 +90,7 @@
                             <li><a href="#">Online Help</a></li>
                             <li><a href="#">Contact Us</a></li>
                             <li><a href="#">Order Status</a></li>
-                            <li><a href="#">Change Location</a></li>
+                            <li><a href="#">Service Area</a></li>
                             <li><a href="#">FAQ’s</a></li>
                         </ul>
                     </div>
@@ -120,7 +121,7 @@
                 </div>
                 <div class="col-sm-2">
                     <div class="single-widget">
-                        <h2>About Shopper</h2>
+                        <h2>About Us</h2>
                         <ul class="nav nav-pills nav-stacked">
                             <li><a href="#">Company Information</a></li>
                             <li><a href="#">Careers</a></li>
@@ -132,7 +133,7 @@
                 </div>
                 <div class="col-sm-3 col-sm-offset-1">
                     <div class="single-widget">
-                        <h2>About Shopper</h2>
+                        <h2>Subscribe</h2>
                         <form action="#" class="searchform">
                             <input type="text" placeholder="Your email address" />
                             <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
@@ -148,8 +149,8 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
-                <p class="pull-left">Copyright © 2013 E-SHOPPER Inc. All rights reserved.</p>
-                <p class="pull-right">Designed by <span><a target="_blank" href="http://www.themeum.com">Themeum</a></span></p>
+                <p class="pull-left">Copyright © 2020 MasudIT. All rights reserved.</p>
+                <p class="pull-right">Developet by <span><a target="_blank" href="http://www.bsdbd.com/">BSD</a></span></p>
             </div>
         </div>
     </div>

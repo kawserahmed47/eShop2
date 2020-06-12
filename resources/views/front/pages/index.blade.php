@@ -15,7 +15,10 @@
 
 				<div class="col-sm-9 padding-right">
                     {{-- Features Items --}}
+                    <div class="features_items"><!--features_items-->
+                        <h2 class="title text-center">Features Items</h2>
                     @include('front.layouts.features')
+                    </div>
 					
                     {{-- Top Products --}}
                     @include('front.layouts.topProducts')

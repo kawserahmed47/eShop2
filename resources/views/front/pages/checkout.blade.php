@@ -11,7 +11,7 @@
     <div class="container">
         <div class="breadcrumbs">
             <ol class="breadcrumb">
-              <li><a href="#">Home</a></li>
+            <li><a href="{{route('index')}}">Home</a></li>
               <li class="active">Check out</li>
             </ol>
         </div><!--/breadcrums-->
@@ -19,100 +19,71 @@
         <div class="step-one">
             <h2 class="heading">Step1</h2>
         </div>
-        <div class="checkout-options">
-            <h3>New User</h3>
-            <p>Checkout options</p>
-            <ul class="nav">
-                <li>
-                    <label><input type="checkbox"> Register Account</label>
-                </li>
-                <li>
-                    <label><input type="checkbox"> Guest Checkout</label>
-                </li>
-                <li>
-                    <a href=""><i class="fa fa-times"></i>Cancel</a>
-                </li>
-            </ul>
-        </div><!--/checkout-options-->
-
+     
         <div class="register-req">
-            <p>Please use Register And Checkout to easily get access to your order history, or use Checkout as Guest</p>
+            <p>Please use Register And Checkout to easily get access to your order history.</p>
         </div><!--/register-req-->
 
         <div class="shopper-informations">
             <div class="row">
-                <div class="col-sm-3">
-                    <div class="shopper-info">
-                        <p>Shopper Information</p>
-                        <form>
-                            <input type="text" placeholder="Display Name">
-                            <input type="text" placeholder="User Name">
-                            <input type="password" placeholder="Password">
-                            <input type="password" placeholder="Confirm password">
-                        </form>
-                        <a class="btn btn-primary" href="">Get Quotes</a>
-                        <a class="btn btn-primary" href="">Continue</a>
-                    </div>
-                </div>
+               <form action="">
+                <div class="form-group">
                 <div class="col-sm-5 clearfix">
                     <div class="bill-to">
                         <p>Bill To</p>
-                        <div class="form-one">
-                            <form>
-                                <input type="text" placeholder="Company Name">
-                                <input type="text" placeholder="Email*">
-                                <input type="text" placeholder="Title">
-                                <input type="text" placeholder="First Name *">
-                                <input type="text" placeholder="Middle Name">
-                                <input type="text" placeholder="Last Name *">
-                                <input type="text" placeholder="Address 1 *">
-                                <input type="text" placeholder="Address 2">
-                            </form>
+                        <div class="form-one ">
+                            
+                                <input class="form-control" type="text" placeholder="First Name"><br>
+                                <input class="form-control" type="text" placeholder="Last Name"><br>
+                                <input class="form-control" type="text" placeholder="Email*"><br>
+                                <input class="form-control" type="phone" placeholder="Mobile*"><br>
+                                <input class="form-control" type="phone" placeholder="Alternative Mobile"><br>
+                               
+                           
                         </div>
-                        <div class="form-two">
-                            <form>
-                                <input type="text" placeholder="Zip / Postal Code *">
-                                <select>
-                                    <option>-- Country --</option>
-                                    <option>United States</option>
-                                    <option>Bangladesh</option>
-                                    <option>UK</option>
-                                    <option>India</option>
-                                    <option>Pakistan</option>
-                                    <option>Ucrane</option>
-                                    <option>Canada</option>
-                                    <option>Dubai</option>
-                                </select>
-                                <select>
-                                    <option>-- State / Province / Region --</option>
-                                    <option>United States</option>
-                                    <option>Bangladesh</option>
-                                    <option>UK</option>
-                                    <option>India</option>
-                                    <option>Pakistan</option>
-                                    <option>Ucrane</option>
-                                    <option>Canada</option>
-                                    <option>Dubai</option>
-                                </select>
-                                <input type="password" placeholder="Confirm password">
-                                <input type="text" placeholder="Phone *">
-                                <input type="text" placeholder="Mobile Phone">
-                                <input type="text" placeholder="Fax">
-                            </form>
+                        <div class="form-two ">
+                            
+                                <input class="form-control" type="text" placeholder="Full Address*"><br>
+                                <input class="form-control" type="text" placeholder="Location"><br>
+                                <input class="form-control" type="text" placeholder="City"><br>
+                                <input class="form-control" type="text" placeholder="Police Station*"><br>
+                                <input class="form-control" type="text" placeholder="District"><br>
+                            
                         </div>
+                      
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="order-message">
                         <p>Shipping Order</p>
-                        <textarea name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
-                        <label><input type="checkbox"> Shipping to bill address</label>
+                        <textarea class="form-control" style="height: 244px" name="message"  placeholder="Notes about your order, Special Notes for Delivery" rows="16"></textarea>
+                        
                     </div>	
-                </div>					
+                </div>
+                <div class="col-sm-3">
+                    <div class="shopper-info">
+                        <p>Shopper Information</p>
+                        <div  class="total_area" style="margin-left: -40px">
+                        <ul>
+                            <li><label for="">Name:</label> <span>Name Here</span></li>
+                            <li><label for="">Email:</label>  <span>email@info.com</span></li>
+                            <li class="btn " style="background:rgb(255, 187, 0); width:180px"><a style="color: white" href="{{route('index')}}">Continue Shopping</a></li>
+                            <li class="btn " style="background:rgb(255, 187, 0);width:180px"><a style="color: white" type="submit" href="">Update All Information</a></li>
+                          
+                        </ul>
+                    </div>
+                       
+                    </div>
+                </div>
+            </div>
+            </form>					
             </div>
         </div>
-        <div class="review-payment">
-            <h2>Review & Payment</h2>
+        <div class="step-one">
+            <h2 class="heading">Step2</h2>
+        </div>
+        <div class="register-req">
+            <h1 style="font-size: 16px">Review</h1>
         </div>
 
         <div class="table-responsive cart_info">
@@ -124,97 +95,53 @@
                         <td class="price">Price</td>
                         <td class="quantity">Quantity</td>
                         <td class="total">Total</td>
-                        <td></td>
+                        <td>Action</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td class="cart_product">
-                            <a href=""><img src="images/cart/one.png" alt=""></a>
+                            <a href=""><img src="{{asset('public/front/images/cart/one.png')}}" alt=""></a>
                         </td>
                         <td class="cart_description">
                             <h4><a href="">Colorblock Scuba</a></h4>
-                            <p>Web ID: 1089772</p>
+                            <p> ID: 1089772</p>
                         </td>
                         <td class="cart_price">
-                            <p>$59</p>
+                            <p>&#2547 59</p>
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
+                                <a class="cart_quantity_up" href=""> - </a>
                                 <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
+                                <a class="cart_quantity_down" href=""> + </a>
                             </div>
                         </td>
                         <td class="cart_total">
-                            <p class="cart_total_price">$59</p>
+                            <p class="cart_total_price">&#2547 59</p>
                         </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                        <td  class="cart_delete">
+                            <a style="color: black"  class="cart_quantity_delete" href="">Update</a>
+                            <a style="color: black"  class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
                         </td>
                     </tr>
 
-                    <tr>
-                        <td class="cart_product">
-                            <a href=""><img src="images/cart/two.png" alt=""></a>
-                        </td>
-                        <td class="cart_description">
-                            <h4><a href="">Colorblock Scuba</a></h4>
-                            <p>Web ID: 1089772</p>
-                        </td>
-                        <td class="cart_price">
-                            <p>$59</p>
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                            <p class="cart_total_price">$59</p>
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="cart_product">
-                            <a href=""><img src="images/cart/three.png" alt=""></a>
-                        </td>
-                        <td class="cart_description">
-                            <h4><a href="">Colorblock Scuba</a></h4>
-                            <p>Web ID: 1089772</p>
-                        </td>
-                        <td class="cart_price">
-                            <p>$59</p>
-                        </td>
-                        <td class="cart_quantity">
-                            <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
-                            </div>
-                        </td>
-                        <td class="cart_total">
-                            <p class="cart_total_price">$59</p>
-                        </td>
-                        <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
-                        </td>
-                    </tr>
+                 
                     <tr>
                         <td colspan="4">&nbsp;</td>
                         <td colspan="2">
                             <table class="table table-condensed total-result">
                                 <tr>
                                     <td>Cart Sub Total</td>
-                                    <td>$59</td>
+                                    <td>&#2547 59</td>
+                                </tr>
+                                <tr>
+                                    <td>Discount</td>
+                                    <td>&#2547 9</td>
                                 </tr>
                                 <tr>
                                     <td>Exo Tax</td>
-                                    <td>$2</td>
+                                    <td>&#2547 2</td>
                                 </tr>
                                 <tr class="shipping-cost">
                                     <td>Shipping Cost</td>
@@ -222,7 +149,7 @@
                                 </tr>
                                 <tr>
                                     <td>Total</td>
-                                    <td><span>$61</span></td>
+                                    <td><span>&#2547 61</span></td>
                                 </tr>
                             </table>
                         </td>
@@ -230,17 +157,63 @@
                 </tbody>
             </table>
         </div>
-        <div class="payment-options">
-                <span>
-                    <label><input type="checkbox"> Direct Bank Transfer</label>
-                </span>
-                <span>
-                    <label><input type="checkbox"> Check Payment</label>
-                </span>
-                <span>
-                    <label><input type="checkbox"> Paypal</label>
-                </span>
-            </div>
+        <div class="step-one">
+            <h2 class="heading">Step3</h2>
+        </div>
+        <div class="register-req">
+            <h1 style="font-size: 16px">Payment</h1>
+        </div>
+           
+            <div class="category-tab shop-details-tab"><!--category-tab-->
+                <div class="col-sm-12">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#cashon" data-toggle="tab"><i class="fa fa-money"></i> Cash On Delivery</a></li>
+                        <li><a href="#mobile" data-toggle="tab"> <i class="fa fa-mobile"></i> Mobile Banking</a></li>
+                        <li><a href="#online" data-toggle="tab"><span class="glyphicon glyphicon-globe"></span> Online Banking</a></li>
+                        <li><a href="#others" data-toggle="tab"> <span class="glyphicon glyphicon-tasks"> Others</a></li>
+                    </ul>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="cashon" >
+                        <div class="col-sm-12">
+                           
+                            <p class="p5">Cash On Delivery</p>
+                            
+                          
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade" id="mobile" >
+                        <div class="col-sm-12">
+                           
+                            <p>Mobile Banking</p>
+                            
+                          
+                        </div>
+                    
+                    </div>
+                    
+                    <div class="tab-pane fade" id="online" >
+                        <div class="col-sm-12">
+                           
+                            <p>Online Banking</p>
+                            
+                          
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane fade " id="others" >
+                        <div class="col-sm-12">
+                           
+                            <p>Others</p>
+                            
+                          
+                        </div>
+                    </div>
+                    
+                </div>
+            </div><!--/category-tab-->
+            
     </div>
 </section> <!--/#cart_items-->
 

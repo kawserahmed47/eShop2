@@ -46,7 +46,7 @@ class HomeController extends Controller
     public function productDetails(){
         $data = array();
         $data['title']= "Product Details";
-        return view('front.pages.productByCategory',$data);
+        return view('front.pages.productDetails',$data);
 
 
     }
@@ -67,6 +67,13 @@ class HomeController extends Controller
         $data = array();
         $data['title']= "Customer Login";
         return view('front.pages.customerLogin',$data);
+
+    }
+
+    public function customerProfile(){
+        $data = array();
+        $data['title']= "Customer Profile";
+        return view('front.pages.customerProfile',$data);
 
     }
 }

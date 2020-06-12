@@ -25,4 +25,5 @@ Route::get('/productDetails','HomeController@productDetails')->name('productDeta
 Route::get('/productByCategory','HomeController@productByCategory')->name('productByCategory');
 Route::get('/productByBrand','HomeController@productByBrand')->name('productByBrand');
 Route::get('/customerLogin','HomeController@customerLogin')->name('customerLogin');
+Route::get('/customerProfile','HomeController@customerProfile')->name('customerProfile');
 

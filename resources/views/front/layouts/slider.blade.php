@@ -12,10 +12,11 @@
                     <div class="carousel-inner">
                         <div class="item active">
                             <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free E-Commerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
+                                <h1>MASUD <span>IT</span></h1>
+                                <h2>Heading</h2>
+                                <p>Sub Heading </p>
+                            <a class="btn btn-primary" href="{{route('cart')}}">Get it now</a>
+                              
                             </div>
                             <div class="col-sm-6">
                                 <img src="{{asset('public/front/images/home/girl1.jpg')}}" class="girl img-responsive" alt="" />
@@ -24,11 +25,10 @@
                         </div>
                         <div class="item">
                             <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>100% Responsive Design</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
+                                <h1>MASUD <span>IT</span></h1>
+                                <h2>Heading</h2>
+                                <p>Subheading </p>
+                                <a class="btn btn-primary" href="{{route('cart')}}">Get it now</a>                            </div>
                             <div class="col-sm-6">
                                 <img src="{{asset('public/front/images/home/girl2.jpg')}}" class="girl img-responsive" alt="" />
                                 <img src="{{asset('public/front/images/home/pricing.png')}}"  class="pricing" alt="" />
@@ -37,11 +37,10 @@
                         
                         <div class="item">
                             <div class="col-sm-6">
-                                <h1><span>E</span>-SHOPPER</h1>
-                                <h2>Free Ecommerce Template</h2>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-                                <button type="button" class="btn btn-default get">Get it now</button>
-                            </div>
+                                <h1>MASUD <span>IT</span></h1>
+                                <h2>Heading</h2>
+                                <p>Sub Heading </p>
+                                <a class="btn btn-primary" href="{{route('cart')}}">Get it now</a>                            </div>
                             <div class="col-sm-6">
                                 <img src="{{asset('public/front/images/home/girl3.jpg')}}" class="girl img-responsive" alt="" />
                                 <img src="{{asset('public/front/images/home/pricing.png')}}" class="pricing" alt="" />

@@ -14,7 +14,7 @@
                 <div id="sportswear" class="panel-collapse collapse">
                     <div class="panel-body">
                         <ul>
-                            <li><a href="#">Nike </a></li>
+                        <li><a href="{{route('productByCategory')}}">Nike </a></li>
                             <li><a href="#">Under Armour </a></li>
                             <li><a href="#">Adidas </a></li>
                             <li><a href="#">Puma</a></li>
@@ -112,7 +112,7 @@
             <h2>Brands</h2>
             <div class="brands-name">
                 <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
+                    <li><a href="{{route('productByBrand')}}"> <span class="pull-right">(50)</span>Acne</a></li>
                     <li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
                     <li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
                     <li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
