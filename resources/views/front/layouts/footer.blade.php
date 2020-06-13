@@ -150,7 +150,7 @@
         <div class="container">
             <div class="row">
                 <p class="pull-left">Copyright © 2020 MasudIT. All rights reserved.</p>
-                <p class="pull-right">Developet by <span><a target="_blank" href="http://www.bsdbd.com/">BSD</a></span></p>
+                <p class="pull-right">Developed by <span><a target="_blank" href="http://www.bsdbd.com/">BSD</a></span></p>
             </div>
         </div>
     </div>
