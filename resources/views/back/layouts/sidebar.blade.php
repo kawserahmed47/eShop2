@@ -14,8 +14,8 @@
       </div>
       <div class="info">
        
-        @if (Session::get('admin_name'))
-        <a href="#Profile" class="d-block"> {{ Session::get('admin_name') }} </a>
+        @if (Session::get('name'))
+        <a href="#Profile" class="d-block"> {{ Session::get('name') }} </a>
         @else
         <a href="#Profile" class="d-block"> Admin Name Here </a>
         @endif

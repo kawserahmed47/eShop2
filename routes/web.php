@@ -17,7 +17,7 @@
 
 //Home Controller
 
-
+use Illuminate\Support\Facades\Route;
 
 Route::get('/','HomeController@index')->name('index');
 Route::get('/about','HomeController@about')->name('about');
@@ -38,6 +38,11 @@ Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');
 //Admin Coontroller
 Route::get('/adminLogin','AdminController@adminLogin')->name('adminLogin');
 Route::get('/adminRegister','AdminController@adminRegister')->name('adminRegister');
+Route::post('/registerAdmin','AdminController@registerAdmin')->name('registerAdmin');
+Route::get('/adminLogout','AdminController@adminLogout')->name('adminLogout');
+
+Route::post('/loginCheck','AdminController@loginCheck')->name('loginCheck');
+
 Route::get('/viewAdmins','AdminController@viewAdmins')->name('viewAdmins');
 
 //Brand Controller

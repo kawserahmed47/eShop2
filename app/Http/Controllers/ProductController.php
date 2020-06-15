@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
         public function addProduct(){
         $data = array();
         $data['title']="Add Product";

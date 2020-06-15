@@ -105,9 +105,14 @@
           <i class="far fa-user"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">Admin</span>
+        <span class="dropdown-item dropdown-header">
+          @if (Session::get('name'))
+          {{ Session::get('name') }}
+          @endif
+
+        </span>
           <div class="dropdown-divider"></div>
-          <a href="/logout" class="dropdown-item">
+        <a href="{{route('adminLogout')}}" class="dropdown-item">
             <i class="fas ion-log-out mr-2"></i>Logout
           </a>
           <div class="dropdown-divider"></div>

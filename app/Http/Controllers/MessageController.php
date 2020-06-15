@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class MessageController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+    
     public function viewMessages(){
         $data = array();
         $data['title']="View Messaage";

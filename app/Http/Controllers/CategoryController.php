@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
+   public function __construct()
+   {
+       $this->middleware('admin');
+   }
+   
    public function addCategory(){
     $data = array();
     $data['title']="Add Category";

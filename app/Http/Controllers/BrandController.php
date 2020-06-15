@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class BrandController extends Controller
 {
+    public function __construct()
+     {
+         $this->middleware('admin');
+     }
+     
     public function addBrand(){
         $data = array();
         $data['title']="Add Brand";

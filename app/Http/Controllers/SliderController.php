@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class SliderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
+    
     public function addSlider(){
         $data = array();
         $data['title'] ="Add Slider";

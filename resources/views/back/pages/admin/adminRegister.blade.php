@@ -33,16 +33,15 @@
 
         @if (Session::get('message'))
         <p class="bg-danger text-center">{{ Session::get('message') }}</p>
-        {{Session::put('message',NULL)}}
         @endif
 
 
      
 
-      <form action="/registerAdmin" method="post">
+      <form action="{{route('registerAdmin')}}" method="post">
       @csrf
         <div class="input-group mb-3">
-          <input type="text" name="admin_name" required class="form-control" placeholder="Full name">
+          <input type="text" name="name" required class="form-control" placeholder="Full name">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-user"></span>
@@ -74,7 +73,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-        <select class="form-control" name="role" id="">
+        <select class="form-control" name="status" id="">
         <option value="0"> Main Admin </option>
         <option value="1"> Database Admin </option>
         <option value="2"> Controller </option>
