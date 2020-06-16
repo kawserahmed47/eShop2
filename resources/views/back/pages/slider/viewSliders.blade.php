@@ -30,7 +30,7 @@
                 <br>
                 @if (Session::get('message'))
                 <p class="bg-success text-center">{{ Session::get('message') }}</p>
-                {{Session::put('message',NULL)}}
+              
                 @endif
               </div>
               <!-- /.card-header -->
@@ -56,17 +56,21 @@
                       <td>{{$a=$a+1 }} </td>
                       <td>{{$result->title }}</td>
                       <td> {{$result->subtitle}} </td>
-                      <td> <img style="width: 100px; height: 100px;"  src="{{ $result->img }}" alt="Slider_Img"> </td>
+                      <td> <img style="width: 100px; height: 100px;"  src="{{ $result->image }}" alt="Slider_Img"> </td>
                      <td>
-                     @if($result->active ==1 )
-                    <span class="label bg-success" > Active</span>
-                 @else
+                     @if($result->status ==1 )
+                    <span class="label bg-success" > Regular</span>
+                    @elseif($result->status ==3)
+
+                  <span class="label bg-primary" >Active</span>
+                  @else
+
                  <span class="label bg-danger" > Inactive</span>
                  @endif
                      </td>
                       <td>
-                      <a class=" badge bg-primary" href="{{route('editSlider')}}/{{ $result->id}}">Edit</a>
-                      <a  onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="deleteSlider/{{$result->id}}">Delete</a>
+                      <a class=" badge bg-primary" href="{{route('editSlider',$result->id)}}">Edit</a>
+                      <a  onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="{{route('deleteSlider',$result->id)}}">Delete</a>
                       </td>
                     </tr>
                     @endforeach
@@ -84,17 +88,6 @@
                 </table>
               </div>
               <!-- /.card-body -->
-              <!--
-              <div class="card-footer clearfix">
-                <ul class="pagination pagination-sm m-0 float-right">
-                  <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
-                </ul>
-              </div>
--->
 
             </div>
             <!-- /.card -->

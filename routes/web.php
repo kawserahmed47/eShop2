@@ -17,6 +17,7 @@
 
 //Home Controller
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/','HomeController@index')->name('index');
@@ -47,24 +48,35 @@ Route::get('/viewAdmins','AdminController@viewAdmins')->name('viewAdmins');
 
 //Brand Controller
 Route::get('/addBrand','BrandController@addBrand')->name('addBrand');
+Route::post('/insertBrand','BrandController@insertBrand')->name('insertBrand');
 Route::get('/viewBrands','BrandController@viewBrands')->name('viewBrands');
-Route::get('/editBrand','BrandController@editBrand')->name('editBrand');
+Route::get('/editBrand/{id}','BrandController@editBrand')->name('editBrand');
+Route::post('/updateBrand/{id}', 'BrandController@updateBrand')->name('updateBrand');
+Route::get('/deleteBrand/{id}','BrandController@deleteBrand')->name('deleteBrand');
 
 //Category Controller
 Route::get('/addCategory','CategoryController@addCategory')->name('addCategory');
+Route::post('/insertCategory','CategoryController@insertCategory')->name('insertCategory');
 Route::get('/viewCategories','CategoryController@viewCategories')->name('viewCategories');
-Route::get('/editCategory','CategoryController@editCategory')->name('editCategory');
+Route::get('/editCategory/{id}','CategoryController@editCategory')->name('editCategory');
+Route::post('/updateCategory/{id}','CategoryController@updateCategory')->name('updateCategory');
+Route::get('/deleteCategory/{id}','CategoryController@deleteCategory')->name('deleteCategory');
+
 
 
 //Product Controller
 Route::get('/addProduct','ProductController@addProduct')->name('addProduct');
 Route::get('/viewProducts','ProductController@viewProducts')->name('viewProducts');
 Route::get('/editProduct','ProductController@editProduct')->name('editProduct');
+Route::post('/insertProduct','ProductController@insertProduct')->name('insertProduct');
 
 //Slider Controller
 Route::get('/addSlider','SliderController@addSlider')->name('addSlider');
+Route::post('/insertSlider','SliderController@insertSlider')->name('insertSlider');
 Route::get('/viewSliders','SliderController@viewSliders')->name('viewSliders');
-Route::get('/editSlider','SliderController@editSlider')->name('editSlider');
+Route::get('/editSlider/{id}','SliderController@editSlider')->name('editSlider');
+Route::post('/updateSlider/{id}','SliderController@updateSlider')->name('updateSlider');
+Route::get('/deleteSlider/{id}','SliderController@deleteSlider')->name('deleteSlider');
 
 //Order Controller
 Route::get('/viewOrders','OrderController@viewOrders')->name('viewOrders');

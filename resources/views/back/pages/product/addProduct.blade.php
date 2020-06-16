@@ -42,12 +42,20 @@
                   <i class="fas fa-minus"></i></button>
               </div>
             </div>
-            <form action="/insertProduct" method="POST" enctype="multipart/form-data"  >
+            <form action="{{route('insertProduct')}}" method="POST" enctype="multipart/form-data"  >
             @csrf 
             <div class="card-body">
               <div class="form-group">
+                <label for="inputName">Product Code</label>
+                <input type="text" name="product_code"  id="inputName" class="form-control">
+              </div>
+              <div class="form-group">
                 <label for="inputName">Product Name</label>
-                <input type="text" name="product_name"  id="inputName" class="form-control">
+                <input type="text" name="name"  id="inputName" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Product Quantity</label>
+                <input type="text" name="quantity"  id="inputName" class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputName">Product Price</label>
@@ -59,7 +67,7 @@
                     <option value="">--select--</option>
                     @if (!empty($categories))
                   @foreach($categories as $category)
-                    <option value="{{ $category->id }}" >{{$category->category_name }}</option>
+                    <option value="{{ $category->id }}" >{{$category->name }}</option>
                   @endforeach
                   @else
                   <option value="">Not available</option>
@@ -73,7 +81,7 @@
                   <option value="">--select--</option>
                   @if(!empty($brands))
                 @foreach($brands as $brand)
-                    <option value="{{ $brand->id }}" >{{ $brand->brand_name }}</option>
+                    <option value="{{ $brand->id }}" >{{ $brand->name }}</option>
                   @endforeach
                   @else 
                   <option value="">Not available</option>
@@ -83,7 +91,7 @@
 
               <div class="form-group">
                 <label for="inputDescription">Active In </label>
-                <select name="active_in"   class="form-control">
+                <select name="status"   class="form-control">
                           <option value="0">Select</option>
                           <option value="1">Features</option>
                           <option value="2">BestSeller</option>
@@ -92,13 +100,25 @@
               </div>
               <div class="form-group">
                 <label for="inputDescription">Description</label>
-                <textarea id="inputDescription" placeholder="Describe" name="product_description" class="form-control" rows="4"></textarea>
+                <textarea id="inputDescription" placeholder="Describe" name="description" class="form-control" rows="4"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Specification</label>
+                <textarea id="inputDescription" placeholder="Describe" name="specification" class="form-control" rows="4"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Policy</label>
+                <textarea id="inputDescription" placeholder="Describe" name="policy" class="form-control" rows="4"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="inputDescription">Termns & Condition</label>
+                <textarea id="inputDescription" placeholder="Describe" name="termns_conditions" class="form-control" rows="4"></textarea>
               </div>
               <div class="form-group">
                 <label for="exampleInputFile">Image input</label> 
                 <div class="input-group">
                   <div class="custom-file">
-                <input type='file' name="img" id="imgInp_product" />
+                <input type='file' name="image" id="imgInp_product" />
                  <img style="width: 100px; height: 100px;" id="blah_product" src="#" alt="Preview" />
                 </div>
                 </div>
@@ -128,40 +148,7 @@
 
 
 @section('extraJquery')
- <script>
-// $(function(){
-//     var category = $('select[name="category_id"]');
-//     var subcategory = $('select[name="subcat_id"]');
-//     subcategory.attr('disabled', 'disabled');
-//     category.change(function(){
-
-//       var id = $(this).val();
-//       // 
-//       if(id){
-//         console.log(id);
-//         subcategory.removeAttr('disabled');
-//   $.ajax({
-//           url:'/subcategory/'+id,
-//           type:'GET',
-//           dataType:'json',
-//           success:function(data){
-//             console.log(data);
-//             var s = '<option value="">--select--</option>';
-//             data.forEach(function(row) {
-//               s +='<option value="'+row.id+'">'+row.sub_cat_name+'</option>'
-              
-//             });
-//             subcategory.html(s);
-            
-//           }
-//         })
-
-//       }
-//     })
-
-// })
-
-</script>  
+  
 <script>
   function readURL(input) {
       if (input.files && input.files[0]) {

@@ -36,30 +36,31 @@
                   <i class="fas fa-minus"></i></button>
               </div>
             </div>
-            <form action="/insertSlider" method="POST" enctype="multipart/form-data"  > 
+            <form action="{{route('updateSlider',$results->id)}}" method="POST" enctype="multipart/form-data"  > 
             @csrf
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Title</label>
-                <input type="text" name="title" id="inputName" class="form-control">
+              <input type="text" name="title" id="inputName" value="{{$results->title}}" class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputDescription">Subtitle</label>
-                <textarea id="inputDescription" name="subtitle" class="form-control" rows="4"></textarea>
+                <textarea id="inputDescription" name="subtitle" class="form-control" rows="4">{{$results->subtitle}}</textarea>
               </div>
               <div class="form-group">
                 <label for="inputName">Status</label>
-               <select name="active" id="selectStatus">
-               <option value="1">Active</option>
+               <select name="status" id="selectStatus">
+               <option value="1">Regular</option>
                <option value="0">Inactive</option>
+               <option value="3">Always active</option>
                </select>
               </div>
                 <div class="form-group">
                     <label for="exampleInputFile">Image input</label> 
                     <div class="input-group">
                       <div class="custom-file">
-                    <input type='file' name="img" id="imgInp_slider" />
-                     <img style="width: 100px; height: 100px;" id="blah_slider" src="#" alt="Preview" />
+                    <input type='file' name="image" id="imgInp_slider" />
+                      <img style="width: 100px; height: 100px;" id="blah_slider" src="{{asset($results->image)}}" alt="Preview" />
                     </div>
                     </div>
                   </div>
@@ -101,7 +102,7 @@ function readURL(input) {
 $("#imgInp_slider").change(function(){
     readURL(this);
 });
-
+$("#selectStatus").val({{ $results->status }});
 </script>
 
 @endsection

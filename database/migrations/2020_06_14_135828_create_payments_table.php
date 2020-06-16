@@ -19,8 +19,8 @@ class CreatePaymentsTable extends Migration
             $table->float('amount');
             $table->string('transaction_id');
             $table->integer('status');
-            $table->string('created_by');
-            $table->string('updated_by');
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }

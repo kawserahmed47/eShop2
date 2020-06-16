@@ -19,8 +19,8 @@ class CreateOrderInfosTable extends Migration
             $table->integer('product_id');
             $table->integer('quantity');
             $table->float('price');
-            $table->string('created_by');
-            $table->string('updated_by');
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }

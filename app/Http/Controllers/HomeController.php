@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
+
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -9,6 +12,10 @@ class HomeController extends Controller
     public function index(){
         $data = array();
         $data['title']= "Home";
+        $data['brands']=DB::table('brands')->where('status', 1)->get();
+        $data['categories']=DB::table('categories')->where('status', 1)->get();
+        $data['sliders']=DB::table('sliders')->where('status',1)->orWhere('status', 3)->get();
+
         return view('front.pages.index',$data);
     }
 

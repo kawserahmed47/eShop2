@@ -24,14 +24,14 @@ class CreateProductsTable extends Migration
             $table->string('slug')->unique();
             $table->float('price');
             $table->integer('quantity');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->integer('status');
-            $table->text('description');
-            $table->text('specification');
-            $table->text('policy');
-            $table->text('termns_conditions');
-            $table->string('created_by');
-            $table->string('updated_by');
+            $table->text('description')->nullable();
+            $table->text('specification')->nullable();
+            $table->text('policy')->nullable();
+            $table->text('termns_conditions')->nullable();
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }

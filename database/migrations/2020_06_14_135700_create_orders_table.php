@@ -18,8 +18,8 @@ class CreateOrdersTable extends Migration
             $table->integer('shipping_id');
             $table->integer('payment_id');
             $table->integer('status');
-            $table->string('created_by');
-            $table->string('updated_by');
+            $table->string('created_by')->nullable();
+            $table->string('updated_by')->nullable();
             $table->timestamps();
         });
     }

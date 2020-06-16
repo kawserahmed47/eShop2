@@ -36,7 +36,7 @@
                   <i class="fas fa-minus"></i></button>
               </div>
             </div>
-            <form action="/insertSlider" method="POST" enctype="multipart/form-data"  > 
+            <form action="{{route('insertSlider')}}" method="POST" enctype="multipart/form-data"  > 
             @csrf
             <div class="card-body">
               <div class="form-group">
@@ -49,7 +49,7 @@
               </div>
               <div class="form-group">
                 <label for="inputName">Status</label>
-               <select name="active" id="selectStatus">
+               <select name="status" id="selectStatus">
                <option value="1">Active</option>
                <option value="0">Inactive</option>
                </select>
@@ -58,7 +58,7 @@
                     <label for="exampleInputFile">Image input</label> 
                     <div class="input-group">
                       <div class="custom-file">
-                    <input type='file' name="img" id="imgInp_slider" />
+                    <input type='file' name="image" id="imgInp_slider" />
                      <img style="width: 100px; height: 100px;" id="blah_slider" src="#" alt="Preview" />
                     </div>
                     </div>

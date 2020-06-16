@@ -30,7 +30,7 @@
               <div class="card-header">               
                 @if (Session::get('message'))
 <p class="bg-success text-center">{{ Session::get('message') }}</p>
-{{Session::put('message',NULL)}}
+
 @endif
 
 <h3 class="card-title">Brand List</h3> 
@@ -56,10 +56,10 @@
                   @foreach($results as $result)
                     <tr>
                       <td>{{$a=$a+1 }} </td>
-                      <td><img style="width: 100px; height: 100px;"  src="{{ $result->img }}" alt="img" ></td>
-                      <td>{{ $result->brand_name }}</td>
+                      <td><img style="width: 100px; height: 100px;"  src="{{ $result->image }}" alt="img" ></td>
+                      <td>{{ $result->name }}</td>
                       <td>
-                      {{ $result->brand_description }}
+                      {{ $result->description }}
                       </td>
                       <td>  
                       @if($result->status ==1 )
@@ -69,8 +69,8 @@
                  @endif 
                  </td>
                       <td>
-                      <a class=" badge bg-primary" href="{{route('editBrand')}}/{{ $result->id }}">Edit</a>
-                      <a onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="/deleteBrand/{{ $result->id }}">Delete</a>
+                      <a class=" badge bg-primary" href="{{route('editBrand',$result->id)}}">Edit</a>
+                      <a onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="{{route('deleteBrand',$result->id)}}">Delete</a>
                       </td>
                     </tr>
                 @endforeach

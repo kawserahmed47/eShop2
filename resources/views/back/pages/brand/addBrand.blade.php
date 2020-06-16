@@ -1,7 +1,6 @@
 @extends('back.adminPanel')
 @section('title')
-{{$title}}
-    
+{{$title}}    
 @endsection
 @section('dashboardContent')
 
@@ -33,25 +32,25 @@
               <h3 class="card-title">Add Brand</h3>
 
               @if (Session::get('message'))
-<p class="bg-danger text-center">{{ Session::get('message') }}</p>
-{{Session::put('message',NULL)}}
-@endif
+                <p class="bg-danger text-center">{{ Session::get('message') }}</p>
+
+                @endif
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                   <i class="fas fa-minus"></i></button>
               </div>
             </div>
-            <form action="/insertBrand" method="POST" enctype="multipart/form-data" > 
+          <form action="{{route('insertBrand')}}" method="POST" enctype="multipart/form-data" > 
             @csrf
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Brand Name</label>
-                <input type="text" name="brand_name" required class="form-control">
+                <input type="text" name="name" required class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputDescription">Brand Description</label>
                 <div class="mb-3">
-                <textarea rows="4" cols="50" name="brand_description" placeholder="Describe  here..."></textarea>
+                <textarea rows="4" cols="50" name="description" placeholder="Describe  here..."></textarea>
               </div>
               </div>
               <div class="form-group">
@@ -65,7 +64,7 @@
                     <label for="exampleInputFile">Image input</label> 
                     <div class="input-group">
                       <div class="custom-file">
-                    <input type='file' name="img"   id="imgInp_product" />
+                    <input type='file' name="image"   id="imgInp_product" />
                      <img style="width: 100px; height: 100px;" id="blah_product" src="#" alt="Preview" />
                     </div>
                     </div>

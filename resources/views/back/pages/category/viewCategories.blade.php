@@ -30,7 +30,6 @@
                 <h3 class="card-title">Category List</h3> <br>
                 @if (Session::get('message'))
               <p class="bg-success text-center">{{ Session::get('message') }}</p>
-                    {{Session::put('message',NULL)}}
                 @endif
               </div>
               <!-- /.card-header -->
@@ -55,9 +54,9 @@
                   
                     <tr> 
                       <td>{{$a=$a+1 }} </td>
-                      <td>{{$result->category_name}}</td>
+                      <td>{{$result->name}}</td>
                       <td>
-                       {{$result->category_description}}
+                       {{$result->description}}
                       </td>
                       <td>  @if($result->status ==1 )
                     <span class="label bg-success" > Active</span>
@@ -65,8 +64,8 @@
                  <span class="label bg-danger" > Inactive</span>
                  @endif </td>
                       <td>
-                      <a class=" badge bg-primary" href="{{route('editCategory')}}/{{ $result->id }}">Edit</a>
-                      <a  onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="/deleteCategory/{{ $result->id }}">Delete</a>
+                      <a class=" badge bg-primary" href="{{route('editCategory',$result->id)}}">Edit</a>
+                      <a  onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="{{route('deleteCategory',$result->id)}}">Delete</a>
                       </td>
                     </tr>
                 @endforeach

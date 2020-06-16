@@ -29,7 +29,7 @@ class AdminController extends Controller
                 Session::put('adminLogin',TRUE);
                 Session::put('name',$query->name);
                 Session::put('email',$query->email);
-                Session::put('role',$query->status);
+                Session::put('status',$query->status);
                // Session::flash('message', 'Login Successfully!!');
                
                     if(Auth::guard('admin')->attempt(['email' => $email, 'password' => $password]))

@@ -41,17 +41,17 @@
                   <i class="fas fa-minus"></i></button>
               </div>
             </div>
-            <form action="/insertCategory" method="POST" > 
+            <form action="{{route('insertCategory')}}" method="POST" > 
             @csrf
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">Category Name</label>
-                <input type="text" name="category_name" id="inputName" class="form-control">
+                <input type="text" name="name" id="inputName" class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputDescription">Category Description</label>
                 <div class="mb-3">
-                <textarea rows="4" cols="50" name="category_description" placeholder="Describe  here..." ></textarea>
+                <textarea rows="4" cols="50" name="description" placeholder="Describe  here..." ></textarea>
               </div>
               </div>
               <div class="form-group">

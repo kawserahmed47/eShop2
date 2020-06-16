@@ -40,12 +40,12 @@
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>#ID</th>
+                  <th>#Code</th>
+                  <th>Quantity</th>
                   <th>Image</th>
                   <th>Name</th>
                   <th>Price</th>
-                  <th>Brand</th>
-                  <th>Category</th>                
+                  <th>Description</th>              
                   <th>Status</th>
                   <th>Action</th>
                 </tr>
@@ -59,17 +59,17 @@
           
                 @foreach($results as $result)
                 <tr>
-                  <td>{{$a=$a+1 }} </td>
-                  <td><img style="width: 100px; height: 100px;"  src="{{ $result->img }}" alt="img" ></td>
-                  <td>{{ $result->product_name }}</td>
+                  <td>{{$result->product_code }} </td>
+                  <td>{{$result->quantity }} </td>
+                  <td><img style="width: 100px; height: 100px;"  src="{{ $result->image }}" alt="img" ></td>
+                  <td>{{ $result->name }}</td>
                   <td>{{ $result->price }}</td>
-                  <td>{{ $result->brand_name }}</td>
-                 <td>{{ $result->category_name}}</td>
-                  <td>{{ $result->sub_cat_name }}</td>
+                  <td>{{ $result->description }}</td>
+                
                   <td>
-                  @if($result->active_in ==1 )
+                  @if($result->status ==1 )
                     <span class="label bg-success"> Features </span>
-                 @elseif($result->active_in ==2)
+                 @elseif($result->status ==2)
                  <span class="label bg-success"> BestSeller </span>
                  @else($result->active_in ==3)
                  <span class="label bg-success"> TopRated </span>
@@ -89,12 +89,12 @@
                 </tbody>
                 <tfoot>
                   <tr>
-                    <th>#ID</th>
+                    <th>#Code</th>
+                    <th>Quantity</th>
                     <th>Image</th>
                     <th>Name</th>
                     <th>Price</th>
-                    <th>Brand</th>
-                    <th>Category</th>                
+                    <th>Description</th>              
                     <th>Status</th>
                     <th>Action</th>
                   </tr>
