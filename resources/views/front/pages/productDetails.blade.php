@@ -17,7 +17,7 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="{{asset('public/front/images/product-details/1.jpg')}}" alt="" />
+                            <img src="{{asset($productDetails->image)}}" alt="IMG" />
                             
                         </div>
                         {{-- <div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -55,20 +55,30 @@
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
                             <img src="{{asset('public/front/images/product-details/new.jpg')}}" class="newarrival" alt="" />
-                            <h2>Product Name</h2>
-                            <p>Product ID: 1089772</p>
+                            <h2>{{$productDetails->name}}</h2>
+                            <p>Product ID: {{$productDetails->product_code}}</p>
                             <img src="{{asset('public/front/fimages/product-details/rating.png')}}" alt="" />
                             <span>
-                                <span>BDT 50 &#2547 </span>
+                                <span>BDT {{$productDetails->price}} &#2547 </span>
                                 <label>Quantity:</label>
                                 <input type="text" value="1" />
                             <a class="btn btn-fefault cart" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i>
                                     Add to cart</a>
                               
                             </span>
+                            @if ($productDetails->quantity>1)
                             <p><b>Availability:</b> In Stock</p>
-                            <p><b>Condition:</b> New</p>
-                            <p><b>Brand:</b> Name</p>
+                            @else 
+                            <p><b>Availability:</b> Out of Stock</p>
+                            @endif
+                            @php
+                            $categories=DB::table('categories')->where('id', $productDetails->category_id)->first() 
+                            @endphp  
+                            <p><b>Category:</b> {{$categories->name}}</p>
+                            @php
+                $brands=DB::table('brands')->where('id', $productDetails->brand_id)->first() 
+                @endphp 
+                            <p><b>Brand:</b> {{$brands->name}}</p>
                             {{-- <a href=""><img src="{{asset('public/front/images/product-details/share.png')}}" class="share img-responsive"  alt="" /></a> --}}
                         </div><!--/product-information-->
                     </div>
@@ -77,45 +87,45 @@
                 <div class="category-tab shop-details-tab"><!--category-tab-->
                     <div class="col-sm-12">
                         <ul class="nav nav-tabs">
-                            <li class="active"><a href="#details" data-toggle="tab">Description</a></li>
-                            <li><a href="#companyprofile" data-toggle="tab">Specification</a></li>
-                            <li><a href="#tag" data-toggle="tab">Terms & Condition</a></li>
-                            <li ><a href="#reviews" data-toggle="tab">Policy</a></li>
+                            <li class="active"><a href="#description" data-toggle="tab">Description</a></li>
+                            <li><a href="#specification" data-toggle="tab">Specification</a></li>
+                            <li><a href="#termscondition" data-toggle="tab">Terms & Condition</a></li>
+                            <li ><a href="#policy" data-toggle="tab">Policy</a></li>
                         </ul>
                     </div>
                     <div class="tab-content">
-                        <div class="tab-pane fade active in" id="details" >
+                        <div class="tab-pane fade active in" id="description" >
                             <div class="col-sm-12">
                                
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            <p>{{$productDetails->description}}</p>
                                 
                               
                             </div>
                         </div>
                         
-                        <div class="tab-pane fade" id="companyprofile" >
+                        <div class="tab-pane fade" id="specification" >
                             <div class="col-sm-12">
                                
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p>{{$productDetails->specification}}</p>
                                 
                               
                             </div>
                         
                         </div>
                         
-                        <div class="tab-pane fade" id="tag" >
+                        <div class="tab-pane fade" id="termscondition" >
                             <div class="col-sm-12">
                                
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p>{{$productDetails->termns_conditions}}</p>
                                 
                               
                             </div>
                         </div>
                         
-                        <div class="tab-pane fade " id="reviews" >
+                        <div class="tab-pane fade " id="policy" >
                             <div class="col-sm-12">
                                
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                <p>{{$productDetails->policy}}</p>
                                 
                               
                             </div>

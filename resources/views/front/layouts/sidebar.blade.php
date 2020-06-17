@@ -8,7 +8,7 @@
             
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4 class="panel-title"><a href="#">{{$category->name}}</a></h4>
+                <h4 class="panel-title"><a href="{{route('productByCategory',$category->slug)}}">{{$category->name}}</a></h4>
                 </div>
             </div>
             @endforeach    
@@ -29,7 +29,7 @@
                    
                     @if(!empty($brands))
                   @foreach($brands as $brand)
-                <li><a href="{{route('productByBrand')}}"> <span class="pull-right"></span>{{$brand->name}}</a></li>
+                <li><a href="{{route('productByBrand',$brand->slug)}}"> <span class="pull-right"></span>{{$brand->name}}</a></li>
                     @endforeach
 
                     @else 

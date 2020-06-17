@@ -26,9 +26,11 @@ Route::get('/contact','HomeController@contact')->name('contact');
 Route::get('/cart','HomeController@cart')->name('cart');
 Route::get('/checkout','HomeController@checkout')->name('checkout');
 Route::get('/allProducts','HomeController@allProducts')->name('allProducts');
-Route::get('/productDetails','HomeController@productDetails')->name('productDetails');
-Route::get('/productByCategory','HomeController@productByCategory')->name('productByCategory');
-Route::get('/productByBrand','HomeController@productByBrand')->name('productByBrand');
+
+Route::get('/productDetails/{slug}','HomeController@productDetails')->name('productDetails');
+
+Route::get('/productByCategory/{slug}','HomeController@productByCategory')->name('productByCategory');
+Route::get('/productByBrand/{slug}','HomeController@productByBrand')->name('productByBrand');
 Route::get('/customerLogin','HomeController@customerLogin')->name('customerLogin');
 Route::get('/customerProfile','HomeController@customerProfile')->name('customerProfile');
 
@@ -67,8 +69,10 @@ Route::get('/deleteCategory/{id}','CategoryController@deleteCategory')->name('de
 //Product Controller
 Route::get('/addProduct','ProductController@addProduct')->name('addProduct');
 Route::get('/viewProducts','ProductController@viewProducts')->name('viewProducts');
-Route::get('/editProduct','ProductController@editProduct')->name('editProduct');
+Route::get('/editProduct/{id}','ProductController@editProduct')->name('editProduct');
 Route::post('/insertProduct','ProductController@insertProduct')->name('insertProduct');
+Route::post('/updateProduct/{id}','ProductController@updateProduct')->name('updateProduct');
+Route::get('deleteProduct/{id}','ProductController@deleteProduct')->name('deleteProduct');
 
 //Slider Controller
 Route::get('/addSlider','SliderController@addSlider')->name('addSlider');

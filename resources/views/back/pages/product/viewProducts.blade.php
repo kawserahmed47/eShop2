@@ -76,8 +76,8 @@
                  @endif
                   </td>
                   <td>
-                      <a class=" badge bg-primary" href="{{route('editProduct')}}/{{$result->id }}">Edit</a>
-                      <a  onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="deleteProduct/{{ $result->id }}">Delete</a>
+                      <a class=" badge bg-primary" href="{{route('editProduct',$result->id)}}">Edit</a>
+                      <a  onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="{{route('deleteProduct',$result->id)}}">Delete</a>
                       </td>
                 </tr>
                @endforeach
