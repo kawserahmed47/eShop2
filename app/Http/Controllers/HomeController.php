@@ -38,18 +38,7 @@ class HomeController extends Controller
         return view('front.pages.contact',$data);
 
     }
-    public function cart(){
-        $data = array();
-        $data['title']= "Cart";
-        return view('front.pages.cart',$data);
-        
-    }
-    public function checkout(){
-        $data = array();
-        $data['title']= "Checkout";
-        return view('front.pages.checkout',$data);
-
-    }
+   
     public function allProducts(){
         $data = array();
         $data['title']= "All Products";

@@ -17,28 +17,21 @@
 
 //Home Controller
 
-// use App\Http\Controllers\CartController;
-// use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/','HomeController@index')->name('index');
 Route::get('/about','HomeController@about')->name('about');
 Route::get('/contact','HomeController@contact')->name('contact');
+Route::get('/cart','HomeController@cart')->name('cart');
+Route::get('/checkout','HomeController@checkout')->name('checkout');
 Route::get('/allProducts','HomeController@allProducts')->name('allProducts');
-
-Route::get('/productDetails/{slug}','HomeController@productDetails')->name('productDetails');
-
-Route::get('/productByCategory/{slug}','HomeController@productByCategory')->name('productByCategory');
-Route::get('/productByBrand/{slug}','HomeController@productByBrand')->name('productByBrand');
+Route::get('/productDetails','HomeController@productDetails')->name('productDetails');
+Route::get('/productByCategory','HomeController@productByCategory')->name('productByCategory');
+Route::get('/productByBrand','HomeController@productByBrand')->name('productByBrand');
 Route::get('/customerLogin','HomeController@customerLogin')->name('customerLogin');
 Route::get('/customerProfile','HomeController@customerProfile')->name('customerProfile');
 
-Route::post('/insertCart/{id}', 'CartController@insertCart')->name('insertCart');
-Route::get('/cart','CartController@cart')->name('cart');
-Route::get('/cartDelete/{id}','CartController@cartDelete')->name('cartDelete');
-Route::post('/updateCart/{id}','CartController@updateCart')->name('updateCart');
-Route::get('/clearCart','CartController@clearCart')->name('clearCart');
-Route::get('/checkout','CartController@checkout')->name('checkout');
 
 //Dashboard Controller
 Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');
@@ -74,18 +67,12 @@ Route::get('/deleteCategory/{id}','CategoryController@deleteCategory')->name('de
 //Product Controller
 Route::get('/addProduct','ProductController@addProduct')->name('addProduct');
 Route::get('/viewProducts','ProductController@viewProducts')->name('viewProducts');
-Route::get('/editProduct/{id}','ProductController@editProduct')->name('editProduct');
-Route::post('/insertProduct','ProductController@insertProduct')->name('insertProduct');
-Route::post('/updateProduct/{id}','ProductController@updateProduct')->name('updateProduct');
-Route::get('deleteProduct/{id}','ProductController@deleteProduct')->name('deleteProduct');
+Route::get('/editProduct','ProductController@editProduct')->name('editProduct');
 
 //Slider Controller
 Route::get('/addSlider','SliderController@addSlider')->name('addSlider');
-Route::post('/insertSlider','SliderController@insertSlider')->name('insertSlider');
 Route::get('/viewSliders','SliderController@viewSliders')->name('viewSliders');
-Route::get('/editSlider/{id}','SliderController@editSlider')->name('editSlider');
-Route::post('/updateSlider/{id}','SliderController@updateSlider')->name('updateSlider');
-Route::get('/deleteSlider/{id}','SliderController@deleteSlider')->name('deleteSlider');
+Route::get('/editSlider','SliderController@editSlider')->name('editSlider');
 
 //Order Controller
 Route::get('/viewOrders','OrderController@viewOrders')->name('viewOrders');

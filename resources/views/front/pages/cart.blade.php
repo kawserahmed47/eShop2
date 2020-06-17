@@ -24,39 +24,65 @@
                         <td class="price">Price</td>
                         <td class="quantity">Quantity</td>
                         <td class="total">Total</td>
-                        <td>Action</td>
+                        <td>Action
+                        <br> <a class="badge badge-danger" href="{{route('clearCart')}}">Clear All</a>
+                        </td>
                     </tr>
                 </thead>
                 <tbody>
+                    @php
+                     $cartCollection = Cart::getContent();
+                    @endphp
+
+                    @if(!empty($cartCollection))
+                   
+                    @foreach ($cartCollection as $cart)
                     <tr>
                         <td class="cart_product">
-                            <a href=""><img src="{{asset('public/front/images/cart/one.png')}}" alt=""></a>
+                            <a href=""><img style="height: 100px; width:100px" src="{{asset($cart->attributes->image)}}" alt=""></a>
                         </td>
                         <td class="cart_description">
-                            <h4><a href="">Colorblock Scuba</a></h4>
-                            <p> ID: 1089772</p>
+                        <h4>{{$cart->name}}</h4>
+                            {{-- <p> ID: 1089772</p> --}}
                         </td>
                         <td class="cart_price">
-                            <p>&#2547 59</p>
+                        <p>&#2547 {{$cart->price}}</p>
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> - </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> + </a>
+                            <form action="{{route('updateCart',$cart->id)}}" method="POST">
+                                  @csrf
+                                  <input class="cart_quantity_input" type="text" name="quantity" value="{{$cart->quantity}}" autocomplete="off" size="2">
+                                  <button class="cart_quantity_down" > + </button>
+                                  
+
+                              </form>
+                               
                             </div>
                         </td>
                         <td class="cart_total">
-                            <p class="cart_total_price">&#2547 59</p>
+                            @php
+                             $summedPrice = Cart::get($cart->id)->getPriceSum();
+                            @endphp
+                            <p class="cart_total_price">&#2547 {{$summedPrice}} </p>
                         </td>
                         <td class="cart_delete">
-                            <a style="color: black"  class="btn" href="">Update</a>
+                            {{-- <a style="color: black"  class="btn" href="">Update</a> --}}
 
-                            <a style="color: black"  class="btn cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                            <a style="color: black"  class="btn cart_quantity_delete" href="{{route('cartDelete',$cart->id)}}"><i class="fa fa-times"></i></a>
                            
 
                         </td>
                     </tr>
+                    @endforeach
+                   
+                    @else 
+                    <tr>
+                        <td>
+                            <p>Empty Cart</p>
+                        </td>
+                    </tr> 
+                    @endif
 
                 </tbody>
             </table>
@@ -67,12 +93,13 @@
 <section id="do_action">
     <div class="container">
         <div class="heading">
-            <h3>What would you like to do next?</h3>
+            {{-- <h3>What would you like to do next?</h3>
             <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
+         --}}
         </div>
         <div class="row">
             <div class="col-sm-6">
-                <div class="chose_area">                   
+                {{-- <div class="chose_area">                   
                     <form action="">        
                        
                             <label class="check_out">Coupon Code:</label>
@@ -81,7 +108,7 @@
                         <a class="btn btn-default check_out" href="">Submit</a>
                     </form>  
                     
-                </div>
+                </div> --}}
             </div>
             <div class="col-sm-6">
                 <div class="total_area">

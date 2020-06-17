@@ -60,10 +60,15 @@
                             <img src="{{asset('public/front/fimages/product-details/rating.png')}}" alt="" />
                             <span>
                                 <span>BDT {{$productDetails->price}} &#2547 </span>
+                            <form action="{{route('insertCart',$productDetails->id)}}" method="post">
+                                    @csrf
                                 <label>Quantity:</label>
-                                <input type="text" value="1" />
-                            <a class="btn btn-fefault cart" href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i>
-                                    Add to cart</a>
+                        
+                                <input type="text" name="quantity" value="1" />
+                            
+                                <button class="btn btn-fefault cart" type="submit" ><i class="fa fa-shopping-cart"></i>Add to cart </button>
+                    
+                            </form>
                               
                             </span>
                             @if ($productDetails->quantity>1)

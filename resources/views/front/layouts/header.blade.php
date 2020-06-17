@@ -40,7 +40,18 @@
                             <li><a href="{{route('customerProfile')}}"><i class="fa fa-user"></i> Account</a></li>
                             {{-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> --}}
                         <li><a href="{{route('checkout')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                            <li><a href="{{route('cart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                        @php
+                            $cartTotalQuantity = Cart::getTotalQuantity();
+                            $subTotal = Cart::getSubTotal();
+
+                        @endphp
+                            <li>
+                                <a href="{{route('cart')}}">
+                                    <span  class="badge badge-light"> {{ $cartTotalQuantity}} </span>  |  <span  class="badge badge-info">{{$subTotal}} &#2547</span>
+                                    <i class="fa fa-shopping-cart"></i> Cart
+                                </a>
+                           
+                            </li>
                             <li><a href="{{route('customerLogin')}}"><i class="fa fa-lock"></i> Login</a></li>
                         </ul>
                     </div>
