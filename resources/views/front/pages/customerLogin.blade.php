@@ -13,13 +13,17 @@
             <div class="col-sm-4 col-sm-offset-1">
                 <div class="login-form"><!--login form-->
                     <h2>Login to your account</h2>
-                    <form action="#">
-                        <input type="text" placeholder="Name" />
-                        <input type="email" placeholder="Email Address" />
-                        <span>
+                    @if (Session::get('message'))
+                    <p class="text-primary text-center">{{ Session::get('message') }}</p>
+                    @endif
+                    <form action="{{route('customerLoginCheck')}}" method="POST" >
+                      @csrf  
+                        <input type="tel" name="mobile" placeholder="Mobile"/>
+                        <input type="password" name="password" placeholder="Password" />
+                        {{-- <span>
                             <input type="checkbox" class="checkbox"> 
                             Keep me signed in
-                        </span>
+                        </span> --}}
                         <button type="submit" class="btn btn-default">Login</button>
                     </form>
                 </div><!--/login form-->
@@ -30,10 +34,15 @@
             <div class="col-sm-4">
                 <div class="signup-form"><!--sign up form-->
                     <h2>New User Signup!</h2>
-                    <form action="#">
-                        <input type="text" placeholder="Name"/>
-                        <input type="email" placeholder="Email Address"/>
-                        <input type="password" placeholder="Password"/>
+                    @if (Session::get('rmessage'))
+                    <p class="text-primary text-center">{{ Session::get('rmessage') }}</p>
+                    @endif
+                    <form action="{{route('customerRegister')}}" method="POST">
+                        @csrf
+                        <input type="text" name="name" required placeholder="Name"/>
+                        <input type="tel" name="mobile" required placeholder="Mobile"/>
+                        <input type="password" name="password" required placeholder="Password"/>
+                        <input type="password" name="conform_password" required placeholder="Confirm Password"/>
                         <button type="submit" class="btn btn-default">Signup</button>
                     </form>
                 </div><!--/sign up form-->

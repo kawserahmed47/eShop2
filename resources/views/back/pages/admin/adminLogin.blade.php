@@ -31,7 +31,6 @@
       <p class="login-box-msg">Sign in to start your session</p>
       @if (Session::get('message'))
       <p class="bg-danger text-center">{{ Session::get('message') }}
-      {{-- {{Session::put('message', NULL)}} --}}
       </p>
      
       @endif

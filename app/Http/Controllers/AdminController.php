@@ -70,6 +70,14 @@ class AdminController extends Controller
     }
 
     public function registerAdmin(Request $request){
+        $email = $request->email;
+        $query= DB::table('admins')->where('email', $email)->first();
+        if($query){
+            Session::flash('message','Email already registered');
+                    return redirect()->route('adminRegister');
+
+
+        }else{
         $time=time();
         $data=array();
         $data['name']= $request->name;
@@ -96,6 +104,7 @@ class AdminController extends Controller
             Session::flash('message','Password Doses not Match');
             return redirect()->route('adminRegister');
         }
+    }
     }
 
     public function viewAdmins(){

@@ -55,6 +55,11 @@
                     <div class="col-sm-7">
                         <div class="product-information"><!--/product-information-->
                             <img src="{{asset('public/front/images/product-details/new.jpg')}}" class="newarrival" alt="" />
+                            @if  (Session::get('pmessage'))
+                            <p> <span class="text-danger" >{{ Session::get('pmessage')}} </span> <strong>{{ Session::get('pquantity')}} </strong>  </p>
+                                
+                            @endif
+                            
                             <h2>{{$productDetails->name}}</h2>
                             <p>Product ID: {{$productDetails->product_code}}</p>
                             <img src="{{asset('public/front/fimages/product-details/rating.png')}}" alt="" />

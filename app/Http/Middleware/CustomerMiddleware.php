@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+use Illuminate\Support\Facades\Auth;
 
 use Closure;
 
@@ -15,7 +16,11 @@ class CustomerMiddleware
      */
     public function handle($request, Closure $next)
     {   
-        echo "Customer Middleware";
-        return $next($request);
+        if(Auth::guard('customer')->check()){
+            return $next($request);
+
+        }else{
+            return redirect()->route('customerLogin');
+        }
     }
 }

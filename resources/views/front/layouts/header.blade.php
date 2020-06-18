@@ -37,14 +37,25 @@
                 <div class="col-sm-8">
                     <div class="shop-menu pull-right">
                         <ul class="nav navbar-nav">
-                            <li><a href="{{route('customerProfile')}}"><i class="fa fa-user"></i> Account</a></li>
+                            @php
+                              $customerID=  Auth::guard('customer')->id();
+                            @endphp
+                            @if  (Session::get('customerLogin'))
+
+                            <li><a href="{{route('customerProfile', $customerID)}}"><i class="fa fa-user"></i> Account</a></li>
+
+                            @endif
+                           
                             {{-- <li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> --}}
-                        <li><a href="{{route('checkout')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                        @php
+                            @php
                             $cartTotalQuantity = Cart::getTotalQuantity();
                             $subTotal = Cart::getSubTotal();
 
                         @endphp
+                        @if($cartTotalQuantity > 0 )
+                        <li><a href="{{route('checkout')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                        @endif
+                      
                             <li>
                                 <a href="{{route('cart')}}">
                                     <span  class="badge badge-light"> {{ $cartTotalQuantity}} </span>  |  <span  class="badge badge-info">{{$subTotal}} &#2547</span>
@@ -52,7 +63,12 @@
                                 </a>
                            
                             </li>
+                            @if  (Session::get('customerLogin'))
+                            <li><a href="{{route('customerLogout')}}"><i class="fa fa-lock"></i> Logout</a></li>
+                            @else 
                             <li><a href="{{route('customerLogin')}}"><i class="fa fa-lock"></i> Login</a></li>
+                            @endif
+                           
                         </ul>
                     </div>
                 </div>

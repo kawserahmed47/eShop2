@@ -26,19 +26,30 @@ Route::get('/about','HomeController@about')->name('about');
 Route::get('/contact','HomeController@contact')->name('contact');
 Route::get('/allProducts','HomeController@allProducts')->name('allProducts');
 
+Route::get('/success','HomeController@success')->name('success');
+
 Route::get('/productDetails/{slug}','HomeController@productDetails')->name('productDetails');
 
 Route::get('/productByCategory/{slug}','HomeController@productByCategory')->name('productByCategory');
 Route::get('/productByBrand/{slug}','HomeController@productByBrand')->name('productByBrand');
-Route::get('/customerLogin','HomeController@customerLogin')->name('customerLogin');
-Route::get('/customerProfile','HomeController@customerProfile')->name('customerProfile');
+
+
+Route::get('/customerLogin','CustomerController@customerLogin')->name('customerLogin');
+Route::post('/customerRegister','CustomerController@customerRegister')->name('customerRegister');
+Route::post('/customerLoginCheck','CustomerController@customerLoginCheck')->name('customerLoginCheck');
+Route::get('/customerProfile/{id}','CustomerController@customerProfile')->name('customerProfile');
+Route::get('/customerLogout','CustomerController@customerLogout')->name('customerLogout');
 
 Route::post('/insertCart/{id}', 'CartController@insertCart')->name('insertCart');
 Route::get('/cart','CartController@cart')->name('cart');
 Route::get('/cartDelete/{id}','CartController@cartDelete')->name('cartDelete');
 Route::post('/updateCart/{id}','CartController@updateCart')->name('updateCart');
 Route::get('/clearCart','CartController@clearCart')->name('clearCart');
-Route::get('/checkout','CartController@checkout')->name('checkout');
+Route::get('/checkout','CartController@checkout')->name('checkout')->middleware('customer');
+Route::post('/insertShipping','CartController@insertShipping')->name('insertShipping');
+Route::post('/updateShipping','CartController@updateShipping')->name('updateShipping');
+Route::get('/orderByCash','CartController@orderByCash')->name('orderByCash');
+
 
 //Dashboard Controller
 Route::get('/dashboard','DashboardController@dashboard')->name('dashboard');

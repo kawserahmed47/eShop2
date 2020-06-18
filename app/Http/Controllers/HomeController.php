@@ -90,17 +90,13 @@ class HomeController extends Controller
 
     }
 
-    public function customerLogin(){
+    public function success(){
         $data = array();
-        $data['title']= "Customer Login";
-        return view('front.pages.customerLogin',$data);
-
+        $data['title']= "Success";
+        $data['brands']=DB::table('brands')->where('status', 1)->get();
+        $data['categories']=DB::table('categories')->where('status', 1)->get();
+        return view('front.pages.success',$data);
     }
 
-    public function customerProfile(){
-        $data = array();
-        $data['title']= "Customer Profile";
-        return view('front.pages.customerProfile',$data);
-
-    }
+  
 }
