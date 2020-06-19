@@ -100,7 +100,9 @@ Route::get('/deleteSlider/{id}','SliderController@deleteSlider')->name('deleteSl
 
 //Order Controller
 Route::get('/viewOrders','OrderController@viewOrders')->name('viewOrders');
-
+Route::get('/makeSuccess/{id}','OrderController@makeSuccess')->name('makeSuccess');
+Route::get('/deleteOrder/{id}','OrderController@deleteOrder')->name('deleteOrder');
+Route::get('orderinfo/{id}','OrderController@orderinfo')->name('orderinfo');
 //Message Controller
 Route::get('/viewMessages','MessageController@viewMessages')->name('viewMessages');
 

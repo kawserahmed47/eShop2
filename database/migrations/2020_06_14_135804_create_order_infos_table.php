@@ -15,7 +15,8 @@ class CreateOrderInfosTable extends Migration
     {
         Schema::create('order_infos', function (Blueprint $table) {
             $table->Increments('id');
-            $table->integer('order_id');
+            $table->integer('order_id')->unsigned();
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->integer('product_id');
             $table->integer('quantity');
             $table->float('price');
