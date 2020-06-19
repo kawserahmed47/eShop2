@@ -98,5 +98,16 @@ class HomeController extends Controller
         return view('front.pages.success',$data);
     }
 
+    public function searchitem(Request $request){
+        $name = $request->name;
+        $data= array();
+        $data['title']="Search Product";
+        $data['brands']=DB::table('brands')->where('status', 1)->get();
+        $data['categories']=DB::table('categories')->where('status', 1)->get();
+       $data['products']= DB::table('products')->where('name','like','%'.$name.'%')->get();
+       return view('front.pages.productBySearch',$data);
+
+    }
+
   
 }

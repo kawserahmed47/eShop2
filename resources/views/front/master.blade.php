@@ -44,5 +44,6 @@
 	<script src="{{asset('public/front/js/price-range.js')}}"></script>
     <script src="{{asset('public/front/js/jquery.prettyPhoto.js')}}"></script>
     <script src="{{asset('public/front/js/main.js')}}"></script>
+    @yield('extraJquery')
 </body>
 </html>

@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','HomeController@index')->name('index');
 Route::get('/about','HomeController@about')->name('about');
+Route::post('/searchitem','HomeController@searchitem')->name('searchitem');
 
 Route::get('/allProducts','HomeController@allProducts')->name('allProducts');
 

@@ -117,7 +117,11 @@
                 </div>
                 <div class="col-sm-3">
                     <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
+                    <form action="{{route('searchitem')}}" method="POST">
+                            @csrf
+                        <input type="text" name="name" placeholder="Product Name"/>
+                        <button class="btn " type="submit" >Search</button>
+                        </form>
                     </div>
                 </div>
             </div>
