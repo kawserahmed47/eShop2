@@ -38,35 +38,28 @@
                 <table class="table table-bordered">
                   <thead>                  
                     <tr>
-                      <th style="width: 10px">#</th>
+                      
                       <th>Name</th>
                       <th>Email</th>
                       <th>Subject</th>
-                      <th>Text</th>
+                      <th>Message</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                  @php
-                      $a=0
-                  @endphp
-                  @if(!empty($results))
+                
+                  @if($results!=NULL)
                   @foreach($results as $result)
                     <tr>
-                      <td>{{$a=$a+1 }} </td>
-                      <td>{{$result->title }}</td>
-                      <td> {{$result->subtitle}} </td>
-                      <td> <img style="width: 100px; height: 100px;"  src="{{ $result->img }}" alt="Slider_Img"> </td>
-                     <td>
-                     @if($result->active ==1 )
-                    <span class="label bg-success" > Active</span>
-                 @else
-                 <span class="label bg-danger" > Inactive</span>
-                 @endif
-                     </td>
+                      <td>{{$result->name  }} </td>
+                      <td>{{$result->email }}</td>
+                      <td> {{$result->subject}} </td>
+                      <td>{{$result->message}}</td>
+                  
                       <td>
-                      <a class=" badge bg-primary" href="{{route('editSlider')}}/{{ $result->id}}">Edit</a>
-                      <a  onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="deleteSlider/{{$result->id}}">Delete</a>
+                      {{-- <a class=" badge bg-primary" href="{{route('editSlider')}}/{{ $result->id}}">Edit</a>
+                       --}}
+                      <a  onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="{{route('deleteMessage',$result->id)}}">Delete</a>
                       </td>
                     </tr>
                     @endforeach

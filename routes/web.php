@@ -23,7 +23,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/','HomeController@index')->name('index');
 Route::get('/about','HomeController@about')->name('about');
-Route::get('/contact','HomeController@contact')->name('contact');
+
 Route::get('/allProducts','HomeController@allProducts')->name('allProducts');
 
 Route::get('/success','HomeController@success')->name('success');
@@ -102,8 +102,16 @@ Route::get('/deleteSlider/{id}','SliderController@deleteSlider')->name('deleteSl
 Route::get('/viewOrders','OrderController@viewOrders')->name('viewOrders');
 Route::get('/makeSuccess/{id}','OrderController@makeSuccess')->name('makeSuccess');
 Route::get('/deleteOrder/{id}','OrderController@deleteOrder')->name('deleteOrder');
-Route::get('orderinfo/{id}','OrderController@orderinfo')->name('orderinfo');
+Route::get('/orderinfo/{id}','OrderController@orderinfo')->name('orderinfo');
+
+//Contact Controller
+Route::post('/insertContact','ContactController@insertContact')->name('insertContact');
+Route::get('/contact','HomeController@contact')->name('contact');
+
 //Message Controller
 Route::get('/viewMessages','MessageController@viewMessages')->name('viewMessages');
+Route::get('/deleteMessage/{id}','MessageController@deleteMessage')->name('deleteMessage');
 
+//Mail
+Route::get('/sendMail','MailController@sendMail')->name('sendMail');
 

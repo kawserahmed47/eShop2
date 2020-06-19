@@ -152,7 +152,7 @@ return redirect()->route('cart');
 
          $order_id = DB::table('orders')->insertGetId($order);
 
-         $cartCollection = \Cart::getContent();
+        $cartCollection = \Cart::getContent();
         $orderDetails = array();
          foreach($cartCollection as $cart){
              $orderDetails['order_id']= $order_id;
@@ -161,7 +161,7 @@ return redirect()->route('cart');
              $orderDetails['price']= $cart->price;
              $orderDetails['created_by'] =$customer_id;
             $orderDetails['created_at'] = date("Y-m-d H:i:s",$time);
-            $result=  DB::table('order_infos')->insert($orderDetails);
+            
             $pro = DB::table('products')->where('id',$cart->id)->first();
             if($pro->quantity >= $cart->quantity ){
                 $nquantity = $pro->quantity - $cart->quantity;

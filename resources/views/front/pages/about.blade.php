@@ -53,16 +53,10 @@
               
                
     
-                <div class="replay-box">
-                    <div class="row">
-                        <div class="col-sm-10">
-                           @include('front.layouts.contact')
-                        </div>
-                        
-                    </div>
-                </div><!--/Repaly Box-->
+                
             </div>	
         </div>
+        
     </div>
 </section>
 
