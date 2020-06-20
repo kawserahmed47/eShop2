@@ -98,7 +98,15 @@
                         @endphp
                         @if ($pro)
                     <td>{{$pro->name}}</td>
-                    <td><img src="{{asset($pro->image)}}" style="height: 100px; width:100px" alt="IMG"></td>
+                    <td>
+                        @php
+                        $pic= json_decode($pro->image)
+                         @endphp
+                       
+                          <img src="{{ asset('/moreImg/'.$pic[0]) }}" alt="IMG" style="height:100px; width:100px"/>
+            
+                    
+                    </td>
                         @else 
                         <td></td>
                         <td></td>

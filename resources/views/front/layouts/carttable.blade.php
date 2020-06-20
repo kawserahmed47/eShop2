@@ -21,7 +21,8 @@
         @foreach ($cartCollection as $cart)
         <tr>
             <td class="cart_product">
-                <a href=""><img style="height: 100px; width:100px" src="{{asset($cart->attributes->image)}}" alt=""></a>
+                
+                <a href=""><img style="height: 100px; width:100px" src="{{asset('/moreImg/'.$cart->attributes->image)}}" alt=""></a>
             </td>
             <td class="cart_description">
             <h4>{{$cart->name}}</h4>

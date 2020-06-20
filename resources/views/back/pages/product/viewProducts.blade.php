@@ -66,7 +66,7 @@
                    $pic= json_decode($result->image)
                     @endphp
                   
-                     <img src="{{ asset('/moreImg/'.$pic[0]) }}" alt="Kawser" style="height:100px; width:100px"/>
+                     <img src="{{ asset('/moreImg/'.$pic[0]) }}" alt="IMG" style="height:100px; width:100px"/>
        
                   </td>
                   <td>{{ $result->name }}</td>

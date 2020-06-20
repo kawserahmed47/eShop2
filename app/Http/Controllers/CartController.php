@@ -17,12 +17,13 @@ class CartController extends Controller
     public function insertCart(Request $request, $id){
        $quantity = $request->quantity;
        $products= DB::table('products')->where('id',$id)->first();
+       $pic= json_decode($products->image);
        $data = array();
        $data['id']=$id;
        $data['name']=$products->name;
        $data['price']=$products->price;
        $data['quantity']=$quantity;
-       $data['attributes']['image']=$products->image;
+       $data['attributes']['image']=$pic[0];
 
        \Cart::add($data);
 
