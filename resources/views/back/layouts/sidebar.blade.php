@@ -15,7 +15,7 @@
       <div class="info">
        
         @if (Session::get('name'))
-        <a href="#Profile" class="d-block"> {{ Session::get('name') }} </a>
+        <a href="{{route('editAdmin',Auth::guard('admin')->id())}}" class="d-block"> {{ Session::get('name') }} </a>
         @else
         <a href="#Profile" class="d-block"> Admin Name Here </a>
         @endif

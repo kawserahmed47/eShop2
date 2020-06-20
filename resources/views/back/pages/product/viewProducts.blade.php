@@ -61,7 +61,14 @@
                 <tr>
                   <td>{{$result->product_code }} </td>
                   <td>{{$result->quantity }} </td>
-                  <td><img style="width: 100px; height: 100px;"  src="{{ $result->image }}" alt="img" ></td>
+                  <td>
+                    @php
+                   $pic= json_decode($result->image)
+                    @endphp
+                  
+                     <img src="{{ asset('/moreImg/'.$pic[0]) }}" alt="Kawser" style="height:100px; width:100px"/>
+       
+                  </td>
                   <td>{{ $result->name }}</td>
                   <td>{{ $result->price }}</td>
                   <td>{{ $result->description }}</td>

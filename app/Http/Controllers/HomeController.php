@@ -18,8 +18,7 @@ class HomeController extends Controller
         ->get();
         $data['categories']=DB::table('categories')->where('status', 1)->get();
         $data['sliders']=DB::table('sliders')->where('status',1)->orWhere('status', 3)->get();
-        $data['products']= DB::table('products')->orderByRaw('updated_at - created_at DESC')->take(8)
-        ->get();
+        $data['products']= DB::table('products')->where('status',1)->get();
         $data['tProducts']=DB::table('products')->where('status', 3)->get();
         $data['recommends']=Product::all()->random(3);
 
@@ -46,8 +45,7 @@ class HomeController extends Controller
         $data['tBrands']= DB::table('brands')->orderByRaw('updated_at - created_at DESC')->take(5)
         ->get();
         $data['categories']=DB::table('categories')->where('status', 1)->get();
-        $data['products']= DB::table('products')->orderByRaw('updated_at - created_at DESC')->take(8)
-        ->get();
+        $data['products']= DB::table('products')->get();
         $data['tProducts']=DB::table('products')->where('status', 3)->get();
         $data['recommends']=Product::all()->random(3);
         return view('front.pages.allProducts',$data);

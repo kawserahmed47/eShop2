@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->float('price');
             $table->integer('quantity');
             $table->string('image')->nullable();
+            // $table->string('more_image')->nullable();
             $table->integer('status');
             $table->text('description')->nullable();
             $table->text('specification')->nullable();

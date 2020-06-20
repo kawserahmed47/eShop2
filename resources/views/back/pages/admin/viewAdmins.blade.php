@@ -30,7 +30,6 @@
                 <br>
                 @if (Session::get('message'))
                 <p class="bg-success text-center">{{ Session::get('message') }}</p>
-                {{Session::put('message',NULL)}}
                 @endif
               </div>
               <!-- /.card-header -->
@@ -41,7 +40,7 @@
                       <th style="width: 10px">#</th>
                       <th>Name</th>
                       <th>Email</th>
-                      <th>Image</th>
+                     
                       <th>Status</th>
                       <th>Action</th>
                     </tr>
@@ -54,19 +53,22 @@
                   @foreach($results as $result)
                     <tr>
                       <td>{{$a=$a+1 }} </td>
-                      <td>{{$result->title }}</td>
-                      <td> {{$result->subtitle}} </td>
-                      <td> <img style="width: 100px; height: 100px;"  src="{{ $result->img }}" alt="Slider_Img"> </td>
+                      <td>{{$result->name }}</td>
+                      <td> {{$result->email}} </td>
                      <td>
-                     @if($result->active ==1 )
-                    <span class="label bg-success" > Active</span>
-                 @else
-                 <span class="label bg-danger" > Inactive</span>
+                     @if($result->status ==1 )
+                    <span class="badge badge-info" > Active</span>
+                 @elseif($result->status ==3)
+                 <span class="badge badge-success" > Super Admin</span>
+                 @else 
+                 <span class="badge badge-danger" > Inactive</span>
                  @endif
                      </td>
                       <td>
-                      <a class=" badge bg-primary" href="{{route('editSlider')}}/{{ $result->id}}">Edit</a>
-                      <a  onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="deleteSlider/{{$result->id}}">Delete</a>
+                      <a class=" badge bg-primary" href="{{route('editAdmin',$result->id)}}">Edit</a>
+                      @if ($result->status !=3)
+                      <a  onclick="return confirm('Are you sure?')" class=" badge bg-danger" href="{{route('deleteAdmin',$result->id)}}">Delete</a>
+                      @endif
                       </td>
                     </tr>
                     @endforeach

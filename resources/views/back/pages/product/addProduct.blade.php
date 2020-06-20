@@ -118,11 +118,19 @@
                 <label for="exampleInputFile">Image input</label> 
                 <div class="input-group">
                   <div class="custom-file">
-                <input type='file' name="image" id="imgInp_product" />
+                <input type='file' name="image[]" multiple id="imgInp_product" />
                  <img style="width: 100px; height: 100px;" id="blah_product" src="#" alt="Preview" />
                 </div>
                 </div>
               </div>
+              {{-- <div class="form-group">
+                <label for="exampleInputFile">More images</label> 
+                <div class="input-group">
+                  <div class="custom-file">
+                <input type='file' name="more_image[]" multiple  />
+                </div>
+                </div>
+              </div> --}}
               
             </div>
             <!-- /.card-body -->

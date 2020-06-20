@@ -63,8 +63,10 @@ Route::get('/adminLogout','AdminController@adminLogout')->name('adminLogout');
 
 Route::post('/loginCheck','AdminController@loginCheck')->name('loginCheck');
 
-Route::get('/viewAdmins','AdminController@viewAdmins')->name('viewAdmins');
-
+Route::get('/viewAdmins','DashboardController@viewAdmins')->name('viewAdmins');
+Route::get('/editAdmin/{id}','DashboardController@editAdmin')->name('editAdmin');
+Route::post('/adminUpdate/{id}','DashboardController@adminUpdate')->name('adminUpdate');
+Route::get('/deleteAdmin/{id}','DashboardController@deleteAdmin')->name('deleteAdmin');
 //Brand Controller
 Route::get('/addBrand','BrandController@addBrand')->name('addBrand');
 Route::post('/insertBrand','BrandController@insertBrand')->name('insertBrand');

@@ -107,10 +107,5 @@ class AdminController extends Controller
     }
     }
 
-    public function viewAdmins(){
-        $data = array();
-        $data['title']="View Admins";
-        $data['results']="";
-        return view('back.pages.admin.viewAdmins',$data);
-    }
+   
 }

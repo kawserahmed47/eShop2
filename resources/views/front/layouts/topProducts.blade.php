@@ -21,7 +21,11 @@
                 <div class="product-image-wrapper">
                     <div class="single-products">
                         <div class="productinfo text-center">
-                            <img src="{{asset($tproduct->image)}}" alt="" />
+                            @php
+                            $pic= json_decode($tproduct->image)
+                             @endphp
+                            <img src="{{ asset('/moreImg/'.$pic[0]) }}" alt="" />
+                           
                         <h2>&#2547 {{$tproduct->price}}</h2>
                             <p> {{$tproduct->name}}</p>
                             <a href="{{route('productDetails',$tproduct->slug)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>

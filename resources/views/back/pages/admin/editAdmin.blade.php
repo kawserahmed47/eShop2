@@ -1,165 +1,99 @@
-@extends('admin.master')
-@section('title'){{$title}}@stop
-@section('content')
+@extends('back.adminPanel')
+@section('title')
+{{$title}}
+    
+@endsection
+@section('dashboardContent')
 
-  <header class="main-header">
-
-   
-
-    <!-- Header Navbar: style can be found in header.less -->
- @include('admin.layout.topnav')
-  </header>
-  <!-- Left side column. contains the logo and sidebar -->
-  @include('admin.layout.sidenav')
-
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Admin Edit
-        <small>Preview</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-        <li><a href="#">Forms</a></li>
-        <li class="active">  Admin Edit</li>
-      </ol>
+      <div class="container-fluid">
+        <div class="row ">
+        <div class="col-sm-6">
+            <h1>Edit Admin</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
+              <li class="breadcrumb-item active">Edit Admin</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
     </section>
 
     <!-- Main content -->
     <section class="content">
+    <div class="container-fluid">
       <div class="row">
-        <!-- left column -->
-        <div class="col-md-8">
- 
+        <div class="col-md-9">
+        @if (Session::get('message'))
+<p class="bg-danger text-center">{{ Session::get('message') }}</p>
 
-          <!-- Input addon -->
-          <div class="box box-info">
-              @if(Session::get('message'))
-              <p>{{ Session::get('message') }}</p>
-              {{Session::put('message',NULL)}}
+@endif
+          <div class="card card-primary">
+            <div class="card-header">
+              <h3 class="card-title">Edit Admin</h3>
+          
 
-              @endif
-
-
-            <div class="box-body">
-         
-            <form method="post" action="{{url('/adminUpdate')}}/{{$results->id}}" enctype="multipart/form-data">
-              @csrf
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-archive"></i></span>
-                <label for="mediaCategoryName">  Name </label>
-                <input type="text" name="name" value="{{ $results->name }}" class="form-control" placeholder="Name">
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                  <i class="fas fa-minus"></i></button>
               </div>
-              <br>
-
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-archive"></i></span>
-                <label for="mediaCategoryName"> Mobile </label>
-                <input type="number" name="phone" value="{{ $results->phone }}" class="form-control" placeholder="Mobile">
-              </div>
-              <br>
-
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-archive"></i></span>
-                <label for="mediaCategoryName"> Email </label>
-                <input type="email" name="email" value="{{ $results->email }}" class="form-control" placeholder="Email">
-              </div>
-              <br>
-
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-archive"></i></span>
-                <label for="mediaCategoryName">New Password ?</label>
-                <input type="password" name="password"  class="form-control" placeholder="*******">
-              </div>
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-archive"></i></span>
-                <label for="mediaCategoryName">Confirm Password ?</label>
-                <input type="password" name="confirm_password"  class="form-control" placeholder="*******">
-              </div>
-              <br>
-              <div class="input-group">
-              <span class="input-group-addon"><i class="fa fa-globe"></i></span>
-              <label for=""> Status </label>
-              <select class="form-control"  id="status" name="status">     
-                <option value="1">Active</option>    
-                <option value="0">Inactive</option>
-             </select>
-              </div>
-              <br>
-              <div>
-              <img style="height:200px; width:200px" src="{{asset($results->img)}}" alt="Preview">
-              </div>
-  
-              <br>
-          <div class="form-group">
-                  <label for="exampleInputFile">Image input</label> 
-              <div class="input-group">
-                  <div class="custom-file">
-                      <input type='file' name="img" id="imgInp_slider" />
-                      <img style="width: 100px; height: 100px;" id="blah_slider" src="#" alt="Preview" />
-                  </div>
-              </div>
-          </div>
-                
-            
-              <br>
-              <div class="input-group">
-                <button type="Submit" class="btn btn-block btn-info">Save</button>
-                
-              </div>
-              </form>
-
-
             </div>
-            <!-- /.box-body -->
+          <form action="{{route('adminUpdate',$results->id)}}" method="POST" > 
+            @csrf
+            <div class="card-body">
+              <div class="form-group">
+                <label for="inputName">Admin Name</label>
+              <input type="text" name="name" id="inputName" value="{{$results->name}}" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Email</label>
+              <input type="text" name="email" id="inputName" value="{{$results->email}}" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">New Password</label>
+              <input type="password" name="password" id="inputName"  class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputName">Confirm Password</label>
+              <input type="password" name="conform_password" id="inputName"  class="form-control">
+              </div>
+             @if ($results->status !=3)
+             <div class="form-group">
+              <label for="inputName">Status</label>
+             <select name="status" id="selectStatus">
+             <option value="1">Active</option>
+             <option value="0">Inactive</option>
+             </select>
+            </div>
+                 
+             @endif
+             
+            </div>
+            <!-- /.card-body -->
           </div>
-          <!-- /.box -->
-
+          <!-- /.card -->
         </div>
-        <!--/.col (left) -->
- 
+     
       </div>
-      <!-- /.row -->
+      <div class="row mb-5">
+        <div class="col-md-9">
+        <a href="{{route('dashboard')}}" class="btn btn-secondary">Cancel</a>
+          <button class="btn btn-success float-right" type="submit" > Update </button>
+        </div>
+      </div>
+      </form>
+      </div>
     </section>
     <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-  <!--  
-  <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.18
-    </div>
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE</a>.</strong> All rights
-    reserved.
-  </footer>
--->
-  <!-- Control Sidebar -->
+    
 
-  <!-- /.control-sidebar -->
-  <!-- Add the sidebar's background. This div must be placed
-       immediately after the control sidebar -->
-  <div class="control-sidebar-bg"></div>
-@stop
-@section('script')
+@endsection
+@section('extraJquery')
 <script>
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#blah_slider').attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-$("#imgInp_slider").change(function(){
-    readURL(this);
-});
-$("#status").val({{ $results->status }});
+$("#selectStatus").val({{ $results->status }});
 </script>
-
-@stop
+    
+@endsection

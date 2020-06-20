@@ -113,7 +113,7 @@
                 <label for="inputDescription">Termns & Condition</label>
                 <textarea id="inputDescription" placeholder="Describe" name="termns_conditions" class="form-control" rows="4">{{$result->termns_conditions}}</textarea>
               </div>
-              <div class="form-group">
+              {{-- <div class="form-group">
                 <label for="exampleInputFile">Image input</label> 
                 <div class="input-group">
                   <div class="custom-file">
@@ -121,7 +121,7 @@
             <img style="width: 100px; height: 100px;" id="blah_product" src="{{asset($result->image)}}" alt="Preview" />
                 </div>
                 </div>
-              </div>
+              </div> --}}
               
             </div>
             <!-- /.card-body -->

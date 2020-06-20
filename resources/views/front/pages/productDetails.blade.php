@@ -17,27 +17,32 @@
                 <div class="product-details"><!--product-details-->
                     <div class="col-sm-5">
                         <div class="view-product">
-                            <img src="{{asset($productDetails->image)}}" alt="IMG" />
+                            @php
+                            $pic= json_decode($productDetails->image)
+                             @endphp
+                            <img src="{{ asset('/moreImg/'.$pic[0]) }}" alt="IMG" />
+            
                             
                         </div>
-                        {{-- <div id="similar-product" class="carousel slide" data-ride="carousel">
+                         <div id="similar-product" class="carousel slide" data-ride="carousel">
                             
                               <!-- Wrapper for slides -->
                                 <div class="carousel-inner">
                                     <div class="item active">
-                                      <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                      <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                      <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+                                        @foreach (json_decode($productDetails->image) as $item)
+                                        <a href=""><img src="{{ asset('/moreImg/'.$item) }}" style="height: 100px;width:100px" alt="IMG"></a>
+                                        @endforeach
+                                     
                                     </div>
                                     <div class="item">
-                                      <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                      <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                      <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+                                        @foreach (json_decode($productDetails->image) as $item)
+                                        <a href=""><img src="{{ asset('/moreImg/'.$item) }}" style="height: 100px;width:100px" alt="IMG"></a>
+                                        @endforeach
                                     </div>
                                     <div class="item">
-                                      <a href=""><img src="images/product-details/similar1.jpg" alt=""></a>
-                                      <a href=""><img src="images/product-details/similar2.jpg" alt=""></a>
-                                      <a href=""><img src="images/product-details/similar3.jpg" alt=""></a>
+                                        @foreach (json_decode($productDetails->image) as $item)
+                                        <a href=""><img src="{{ asset('/moreImg/'.$item) }}" style="height: 100px;width:100px" alt="IMG"></a>
+                                        @endforeach
                                     </div>
                                     
                                 </div>
@@ -49,7 +54,7 @@
                               <a class="right item-control" href="#similar-product" data-slide="next">
                                 <i class="fa fa-angle-right"></i>
                               </a>
-                        </div> --}}
+                        </div> 
 
                     </div>
                     <div class="col-sm-7">

@@ -11,7 +11,10 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="{{asset($recommend->image)}}" alt="" />
+                                @php
+                                $pic= json_decode($recommend->image)
+                                 @endphp
+                                <img src="{{ asset('/moreImg/'.$pic[0]) }}" alt="" />
                             <h2>&#2547 {{$recommend->price}}</h2>
                             <p>{{$recommend->name}}</p>
                                 <a href="{{route('productDetails',$recommend->slug)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
@@ -37,7 +40,10 @@
                     <div class="product-image-wrapper">
                         <div class="single-products">
                             <div class="productinfo text-center">
-                                <img src="{{asset($recommend->image)}}" alt="" />
+                                @php
+                                $pic= json_decode($recommend->image)
+                                 @endphp
+                                <img src="{{ asset('/moreImg/'.$pic[0]) }}" alt="" />
                             <h2>&#2547 {{$recommend->price}}</h2>
                             <p>{{$recommend->name}}</p>
                                 <a href="{{route('productDetails',$recommend->slug)}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
